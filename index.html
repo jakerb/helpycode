@@ -38,7 +38,9 @@
 
 	<!-- Introduction -->
 	<div class="intro"></div>
-	
+	{% for repository in site.github.public_repositories %}
+  * [{{ repository.name }}]({{ repository.html_url }})
+{% endfor %}
 	<!-- Content -->
 	<div class="content">
 		<div class="container">
