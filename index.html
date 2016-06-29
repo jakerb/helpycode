@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="helpy" ng-cloak>
 <head>
     <title>Helpy</title>
     <meta charset="utf-8" />
@@ -7,28 +7,39 @@
     <meta name="description" content="Tips, Tricks and Tools for Web Development">
     <meta name="author" content="Helpy">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/kube.min.css" />
+    <meta name="google-site-verification" content="AGdVw1zZgTFeWkt9_PeSfoQnXx31EUf7RmHx2-g7Ayk" />
+  
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular.sanitize.js"></script>
+    <script src="js/angular.router.js"></script>
+
+    <script src="js/pretty.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/routes.js"></script>
+
+    <link rel="stylesheet" href="css/kube.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/custom.min.css" />
+    <link rel="stylesheet" href="css/custom.css" />
     <link rel="shortcut icon" href="img/favicon.png" />
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body ng-controller="app">
 	<!-- Navigation -->
 	<div class="main-nav">
 		<div class="container">
 			<header class="group top-nav">
 				<nav class="navbar logo-w navbar-left" >
-					<a class="logo" href="/">Helpy</a>
+					<a class="logo" href="#/all">Helpy</a>
 				</nav>
 				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
 				    <span class="logo">Helpy</span>
 				</div>
 			    <nav id="navbar-1" class="navbar item-nav navbar-right">
 				    <ul>
-				        <li class="active"><a href="/">Home</a></li>
-				        <li><a href="#">Playground</a></li>
+				        <li class="active"><a href="#/all">Home</a></li>
 				        <li><a href="#">Contact</a></li>
 				    </ul>
 				</nav>
@@ -42,33 +53,8 @@
 	<!-- Content -->
 	<div class="content">
 		<div class="container">
-			<!-- Post -->
-			<div class="post">
-				<!-- Heading -->
-				<a href="#"><h1>Galaxy is on your hand</h1></a>
-				<hr>
-				<div class="in-content">
-					<p>
-						Saturn has a prominent ring system that consists of nine continuous main rings and three discontinuous arcs, composed mostly of ice particles with a smaller amount of rocky debris and dust. Sixty-two known moons orbit the planet, of which fifty-three are officially named. This does not include the hundreds of "moonlets" comprising the rings.
-					</p>
-					<a class="read-more" href="#">Read more</a>
-				</div>
-				<div class="foot-post">
-					<div class="units-row">
-					    <div class="unit-100">
-					    	<strong>Tags:</strong>
-					    	<a href="#">Galaxy</a>,
-					    	<a href="#">Human</a>,
-					    	<a href="#">World</a>,
-					    </div>
-					    <div class="unit-100">
-					    	<strong>COMMENTS:</strong> 
-					    	<a href="#">3</a>
-					    </div>
-					</div>
-				</div>
-			</div>
-			<!-- /post -->
+
+      <div ui-view></div>
 
 
 		</div>
@@ -76,13 +62,12 @@
 
 	<footer>
 		<div class="container">
-			<div class="units-row">
+			<div class="units-row" ng-show="isPost">
 			    <div class="unit-50">
-			    	<button class="btn btn-black"><i class="fa fa-arrow-left"></i> PREVIOUS</button>
+			    	<a href="#/all" class="btn btn-black"><i class="fa fa-arrow-left"></i> PREVIOUS</a>
 			    </div>
 			    <div class="unit-50">
 					<ul class="social list-flat right">
-						<li><a href="mailto:afnizarhilmi@gmail.com"><i class="fa fa-send"></i></a></li>
 						<li><a href="http://twitter.com/flamekaizar"><i class="fa fa-twitter"></i></a></li>
 						<li><a href="http://dribbble.com/flamekaizar"><i class="fa fa-dribbble"></i></a></li>
 						<li><a href="http://behance.com/flamekaizar"><i class="fa fa-behance"></i></a></li>
@@ -90,13 +75,12 @@
 			    </div>
 			</div>
 			<p class="text-centered foot-cp">
-	    		<a href="#">Proudly hosted via Github</a>
+	    		<a href="#">Proudly hosted via Github and build in Angular</a>
 	    	</p>
 		</div>
 	</footer>
 
 	<!-- Javascript -->
-	<script src="js/jquery.min.js"></script>
     <script src="js/kube.min.js"></script>
 </body>
 </html>

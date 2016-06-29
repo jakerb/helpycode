@@ -10,6 +10,15 @@ a { font-family: "Open Sans", sans-serif }
     max-width: 662px;
     padding: 0 20px;
 }
+
+/* Pretty */
+pre.prettyprint {
+    border: none;
+    background: #efefef;
+    padding: 10px;
+    border-radius: 3px;
+}
+
 /* Navigation */
 .main-nav {
     padding-top: 30px;
@@ -31,6 +40,12 @@ a { font-family: "Open Sans", sans-serif }
         transition: all .2s ease-in-out; 
 }
 /* Created by @flamekaizar */
+
+.z-5 {
+    z-index: 5;
+    position: relative;
+}
+
 .top-nav a.logo,
 .logo {
     font-family: 'Open Sans', sans-serif;
@@ -55,6 +70,7 @@ a { font-family: "Open Sans", sans-serif }
     height: 272px;
     padding-top: 117px;
     background: url(../img/head-bg.jpg) #F7F7F7 center top;
+    background-size: cover;
 }
 p.p-intro {
     color: #E85F37;
@@ -183,7 +199,6 @@ a.read-more:hover {
     font-family: "Open Sans", sans-serif;
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase;
 }
 .foot-post a {
     font-weight: 400;

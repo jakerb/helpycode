@@ -1,0 +1,25 @@
+<!-- Post -->
+<div ng-init="getPost('*')">
+	<div class="post" ng-repeat="post in posts">
+		<!-- Heading -->
+		<a href="#"><h1>{{post.title}}</h1></a>
+		<hr>
+		<div class="in-content">
+			<p>{{post.description}}</p>
+			<a class="read-more" href="#/{{post.url}}">Read more</a>
+		</div>
+		<div class="foot-post">
+			<div class="units-row">
+			    <div class="unit-100">
+			    	<strong>Tags:</strong>
+			    	<a href="#" ng-repeat="tag in post.tags">{{tag}} </a>
+			    </div>
+			    <div class="unit-100">
+			    	<strong>Author:</strong> 
+			    	<a href="#">{{post.author}}</a>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /post -->

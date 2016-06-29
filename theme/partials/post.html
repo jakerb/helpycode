@@ -1,0 +1,28 @@
+<!-- Post -->
+<div class="post" ng-init="getPost()" ng-hide="error">
+	<!-- Heading -->
+		<a href="" class="right z-5">Code on Github</a>
+		<h1>{{post.title}}</h1>
+		<hr>
+
+		<div class="in-content" ng-bind-html="postContent"></div>
+		<div class="foot-post">
+			<div class="units-row">
+			    <div class="unit-100">
+			    	<strong>Tagged:</strong>
+			    	<a href="#" ng-repeat="tag in post.tags">{{tag}} </a>
+			    </div>
+			    <div class="unit-100">
+			    	<strong>Author:</strong> 
+			    	<a href="#">{{post.author}}</a>
+			    </div>
+			</div>
+		</div>
+</div>
+
+<div class="post" ng-show="error">
+	<h4 class="text-centered">Oh no!</h4>
+	<p class="text-centered">This post is not available. <a href="#/all">go back</a>.</p>
+</div>
+
+<!-- /post -->
