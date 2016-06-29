@@ -2,9 +2,10 @@
 	"posts": {
 
 		"jazz-up-css": {
-			"title": "Jazz up CSS with Login",
+			"title": "Jazz up CSS with Logic",
 			"url": "jazz-up-css",
-			"description": "With Jazz.js you can add logic to your stylesheet and modify CSS in real time",
+			"github": "Jazz",
+			"description": "Add variables, events, javascript and functions to your CSS files with Jazz.js to make your site awesome.",
 			"author": "Jake Bown",
 			"tags": ["javascript", "css", "frameworks"]
 		}

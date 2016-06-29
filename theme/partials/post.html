@@ -1,7 +1,7 @@
 <!-- Post -->
 <div class="post" ng-init="getPost()" ng-hide="error">
 	<!-- Heading -->
-		<a href="" class="right z-5">Code on Github</a>
+		<a href="https://github.com/jakerb/{{post.github}}" class="right z-5">Code on Github</a>
 		<h1>{{post.title}}</h1>
 		<hr>
 
@@ -10,11 +10,11 @@
 			<div class="units-row">
 			    <div class="unit-100">
 			    	<strong>Tagged:</strong>
-			    	<a href="#" ng-repeat="tag in post.tags">{{tag}} </a>
+			    	<a ng-repeat="tag in post.tags">{{tag}} </a>
 			    </div>
 			    <div class="unit-100">
 			    	<strong>Author:</strong> 
-			    	<a href="#">{{post.author}}</a>
+			    	<a>{{post.author}}</a>
 			    </div>
 			</div>
 		</div>

@@ -4,12 +4,68 @@
 	the basic structure of stylesheets has always been the same.
 </p>
 <p>
-	
+	Although for the most part, CSS is pretty water tight there are some cases where it falls down, one such scenario is viewport
+	height and width which works great on most browsers but goes completely out of the window in versions of Safari for desktop and mobile.
 </p>
-<pre class="prettyprint">class Voila {
-public:
-  // Voila
-  static const string VOILA = "Voila";
-
-  // will not interfere with embedded <a href="#voila2">tags</a>.
+<p>
+	Lets imagine that we've got a full height hero header that fits the height of the window, you could use percent to define the height but in some cases you may need to use <code>vh</code>. In this scenario your code may look like this
+</p>
+<pre class="prettyprint lang-css">.is-hero {
+	background-image: url(path/to/image.jpeg);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	height: 100vh;
 }</pre>
+
+<p>
+	This is where Jazz.js comes into play. Instead of declaring the height in vh, we can use variables, like in Javascript which can change on resize, scroll or any event you may want to use and the change in syntax is very small.
+</p>
+
+<p>
+	First things first, we include the <code>jazz.js</code> script below our jquery and then we need to create a jazzsheet (the same as CSS but we use the <code>.jazz</code> extension), which we include like so:
+</p>
+
+<pre class="prettyprint lang-html">&lt;link rel="jazz/css" href="style.jazz"&gt;</pre>
+
+<note>
+	Make sure to add the <code>.jazz</code> extension with the content type as <code>text/css</code> to your server's MIME type configuration.
+</note>
+
+<p>
+	Once we have included our Jazz stylesheet, we can start writing logic for our hero header, this requires a little Javascript. Within Jazz we can add custom markup, so first, we're going to declare that we want to create a property (which we will call <code>vh100</code>) that will be the height of the viewport:
+</p>
+
+<pre class="prettyprint lang-javascript">jazz.prop('vh100', $(window).height());</pre>
+
+<p>
+	We also want this to change when the page is resize so that the height reflects the actual window height of the browser, to do this we can use the <code>onResize</code> method already inside of Jazz:
+</p>
+
+<pre class="prettyprint lang-javascript">jazz.onResize(function() {
+	jazz.prop('vh100', $(window).height());
+});
+</pre>
+
+
+
+<p>
+	Now that we're happy with our new variable, lets include in within our jazzsheet (style.jazz); whenever we declare a variable in a jazzsheet, we use <code>[$$.variable]</code> replacing <code>variable</code> with our variable name.
+</p>
+
+<pre class="prettyprint lang-css">.is-hero {
+	height: [$$.100vh]px;
+}</pre>
+
+<p>
+	Now, when we load up the page (my resolution being 1280x800px), within the head of the page we will see:
+</p>
+
+<pre class="prettyprint lang-css">.is-hero {
+	height: 800px;
+}</pre>
+
+<p>
+	That's it! A little bit of logic and we now have a hero that will fill the height of the screen regardless of device without having
+	to do a single media query or browser specific fix. This demonstration was to show the capabilities of variables within Jazz and what
+	you can achieve using events, you can obviously do something a lot more productive (even change elements on input change, hover and device orientation in realtime) but you get the idea.
+</p>

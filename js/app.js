@@ -2,6 +2,10 @@
 	
 	var app = angular.module('helpy', ['ui.router', 'ngSanitize']);
 
+	angular.module('HTML5ModeURLs', []).config(['$routeProvider', function($route) {
+	  $route.html5Mode(true);
+	}]);
+
 	app.config(function($httpProvider){
     	delete $httpProvider.defaults.headers.common['X-Requested-With'];
     });

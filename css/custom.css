@@ -5,6 +5,7 @@
 
 body { margin-bottom: 50px }
 a { font-family: "Open Sans", sans-serif }
+
 .container {
     margin: auto;
     max-width: 662px;
@@ -17,6 +18,21 @@ pre.prettyprint {
     background: #efefef;
     padding: 10px;
     border-radius: 3px;
+}
+
+note {
+    padding: 5px 10px;
+    background: #2ecc71;
+    border: 1px solid #27ae60;
+    display: block;
+    border-radius: 3px;
+    color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+}
+
+note code {
+    color: #2ecc71;
 }
 
 /* Navigation */
